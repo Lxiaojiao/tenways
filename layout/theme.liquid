@@ -104,7 +104,11 @@
     {%- endunless -%}
 
     <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
-  </head>
+  
+{% render 'sca-aff-refer-customer' %}
+<script>var scaaffCheck = false;</script>
+{{ 'sca_affiliate.js' | asset_url | script_tag }}
+</head>
 
   <body>
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
@@ -146,5 +150,7 @@
         shareSuccess: `{{ 'general.share.success_message' | t }}`,
       }
     </script>
-  </body>
+   {% include 'smile-initializer' %}
+
+</body>
 </html>
